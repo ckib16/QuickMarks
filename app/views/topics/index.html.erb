@@ -1,7 +1,5 @@
-<h1>Topics#index</h1>
-<p>Find me in app/views/topics/index.html.erb</p>
+<h1>Topics</h1>
 
-<h1>All Topics</h1>
 <% @topics.each do |topic| %>
   <div class="media">
     <div class="media-body">
@@ -10,7 +8,7 @@
       </h4>
     </div>
   </div>
-
-
-
 <% end %>
+
+<h2>New Topic</h2>
+<%= render partial: 'form', locals: { topic: @topic} %>
