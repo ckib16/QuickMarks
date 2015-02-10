@@ -7,11 +7,14 @@
       <div class="media-heading">
         <div class="media-body">
           <h4 class="media-heading">
-            <%= link_to bookmark.url %>
+            <%= link_to bookmark.url, topic_bookmark_path(@topic, bookmark) %>
           </h4>
         </div>
       </div>  
     <% end %>
 </ul>
+
+<h3>New Bookmark URL</h3>
+<%= render partial: "bookmarks/bookmark", locals: { topic: @topic, bookmark: @bookmark } %>
 
 
