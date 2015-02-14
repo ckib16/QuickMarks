@@ -16,7 +16,7 @@ class BookmarksController < ApplicationController
 
     if @bookmark.save
       flash[:notice] = "The bookmark was successfully created."
-      redirect_to @bookmark
+      redirect_to @topic #could aslo put @bookmark.topic
     else
       flash[:error] = "There was an error saving you bookmark."
       render :new
@@ -39,7 +39,20 @@ class BookmarksController < ApplicationController
       flash[:error] = "There was an error editing your bookmark."
       render :edit
     end
+  end
 
+  def destroy
+    @topic = Topic.find(params[:topic_id])
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark_url = @bookmark.url
+
+    if @bookmark.destroy
+      flash[:notice] = "#{@bookmark_url} was deleted."
+      redirect_to @topic
+    else
+      flash[:error] = "There was an error deleting your bookmark"
+      render :show
+    end
   end
 
 end
