@@ -1,14 +1,6 @@
 <h1>Topics</h1>
 
-<% @topics.each do |topic| %>
-  <div class="media">
-    <div class="media-body">
-      <h4 class="media-heading">
-        <%= link_to topic.title, topic %>
-      </h4>
-    </div>
-  </div>
-<% end %>
+<%= render @topics %>
 
-<h2>New Topic</h2>
+<h3>New Topic</h3>
 <%= render partial: 'form', locals: { topic: @topic} %>
