@@ -1,6 +1,6 @@
 class Bookmark < ActiveRecord::Base
   belongs_to :topic
-  delegate :user, to: :topic
+  belongs_to :user
 
   after_create :populate_embedly_image
 

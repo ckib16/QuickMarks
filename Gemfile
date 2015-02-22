@@ -9,6 +9,7 @@ group :development do
   gem 'sqlite3'
   gem 'rails-erd'
   gem 'pry'
+  gem 'meta_request'
 end
 
 gem 'bootstrap-sass'
