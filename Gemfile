@@ -7,9 +7,15 @@ end
 
 group :development do
   gem 'sqlite3'
-  gem 'rails-erd'
+  gem 'better_errors'
+  gem 'binding_of_caller'
   gem 'pry'
+  gem 'pry-byebug'
+  gem 'pry-rails'
+  gem 'pry-rescue'
+  gem 'pry-stack_explorer'
   gem 'meta_request'
+  gem 'rails-erd'
 end
 
 gem 'bootstrap-sass'
