@@ -1,18 +1,20 @@
 class BookmarksController < ApplicationController
+  before_action :set_topic
+  before_action :set_bookmark, except: [:create, :new]
+  
   def show
-    @topic = Topic.find(params[:topic_id])
-    @bookmark = Bookmark.find(params[:id])
   end
 
   def new
-    @topic = Topic.find(params[:topic_id])
     @bookmark = Bookmark.new
   end
 
   def create
-    @topic = Topic.find(params[:topic_id])
-    @bookmark = Bookmark.new(params.require(:bookmark).permit(:url))
+    @bookmark = Bookmark.new(bookmark_params)
+    @bookmark.user = current_user  #from Devise for security
+    
     @bookmark.topic = @topic
+    authorize @bookmark
 
     if @bookmark.save
       flash[:notice] = "The bookmark was successfully created."
@@ -24,15 +26,12 @@ class BookmarksController < ApplicationController
   end
 
   def edit
-    @topic = Topic.find(params[:topic_id])
-    @bookmark = Bookmark.find(params[:id])
   end
 
   def update
-    @topic = Topic.find(params[:topic_id])
-    @bookmark = Bookmark.find(params[:id])
+    authorize @bookmark
 
-    if @bookmark.update_attributes(params.require(:bookmark).permit(:url))
+    if @bookmark.update_attributes(bookmark_params)
       flash[:notice] = "Bookmark successfully edited."
       redirect_to [@topic, @bookmark]
     else
@@ -42,9 +41,8 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
-    @topic = Topic.find(params[:topic_id])
-    @bookmark = Bookmark.find(params[:id])
     @bookmark_url = @bookmark.url
+    authorize @bookmark
 
     if @bookmark.destroy
       flash[:notice] = "#{@bookmark_url} was deleted."
@@ -53,6 +51,20 @@ class BookmarksController < ApplicationController
       flash[:error] = "There was an error deleting your bookmark"
       render :show
     end
+  end
+
+  private
+
+  def bookmark_params
+    params.require(:bookmark).permit(:url)
+  end
+
+  def set_topic
+    @topic = Topic.find(params[:topic_id])
+  end
+
+  def set_bookmark
+    @bookmark = Bookmark.find(params[:id])
   end
 
 end
