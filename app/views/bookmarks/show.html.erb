@@ -2,6 +2,8 @@
 
 <h2> <%= @bookmark.url %>  </h2>
 
+<%= render partial: 'likes/like', locals: { bookmark: @bookmark } %>
+
 <% if policy(@bookmark).edit? %>
   <%= link_to "Edit", edit_topic_bookmark_path(@topic, @bookmark), class: "btn btn-warning" %>
 

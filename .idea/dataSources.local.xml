@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails blocmarks: development" uuid="2833df8b-b37d-42d7-93e9-e7ab194aab7f">
+      <first-sync>true</first-sync>
+    </data-source>
+    <data-source name="Rails blocmarks: test" uuid="becccf73-1d28-4af0-ab67-1a6efb6d243f">
+      <first-sync>true</first-sync>
+    </data-source>
+  </component>
+</project>
