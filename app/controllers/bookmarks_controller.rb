@@ -11,7 +11,7 @@ class BookmarksController < ApplicationController
 
   def create
     @bookmark = Bookmark.new(bookmark_params)
-    @bookmark.user = current_user  #from Devise for security
+    @bookmark.user = current_user  #current_user is a method from Devise, used for security
     
     @bookmark.topic = @topic
     authorize @bookmark
