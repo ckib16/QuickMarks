@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :confirmable
          
   has_many :topics, dependent: :destroy
-  has_many :bookmarks, through: :topics, dependent: :destroy
+  has_many :bookmarks, dependent: :destroy #through: :topics, 
   has_many :likes, dependent: :destroy
 
   def liked(bookmark_id)

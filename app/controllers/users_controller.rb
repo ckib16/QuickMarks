@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @name = current_user.name
+    @user = User.find(params[:id])
     @user_bookmarks = current_user.bookmarks
     @liked_bookmarks = current_user.liked_bookmarks
   end
