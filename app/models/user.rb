@@ -12,5 +12,9 @@ class User < ActiveRecord::Base
     likes.where(bookmark_id: bookmark_id).first
   end
 
+  def liked_bookmarks
+    likes.collect(&:bookmark)
+  end
+
 end
 

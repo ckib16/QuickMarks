@@ -5,16 +5,8 @@
 
   <br></br>
 
-    <% @topic.bookmarks.each do |bookmark| %>
-      <div class="media-heading">
-        <div class="media-body">
-          <h4 class="media-heading">
-            <%= link_to bookmark.url, topic_bookmark_path(@topic, bookmark) %>
-          </h4>
-        </div>
-      </div>  
-    <% end %>
-</ul>
+   <%= render @topic.bookmarks %>
+
 
 <h3>New Bookmark URL</h3>
 <%= render partial: "bookmarks/form", locals: { topic: @topic, bookmark: @bookmark } %>
