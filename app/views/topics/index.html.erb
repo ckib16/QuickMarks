@@ -1,6 +1,7 @@
 <h1>Topics</h1>
 
-<%= render @topics %>
+<%= render @topics %> 
+<!-- Uses the _topic.htmk.erb partial to display by convention -->
 
 <h3>New Topic</h3>
 <%= render partial: 'form', locals: { topic: @topic} %>
