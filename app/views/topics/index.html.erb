@@ -1,5 +1,13 @@
 <h1>Topics</h1>
 
+<div class="jumbotron">
+    <h3>Add topics and links via email!</h3>
+    <h4>Send you email to:
+    <%= mail_to "Test@appcf21cb53414344b68769ff28c95c0add.mailgun.org" %> </h4>
+    <h4>Email subject = QuickMark Topic</h4>
+    <h4>Email body = QuickMark URL</h4>
+  </div>
+
 <%= render @topics %> 
 <!-- Uses the _topic.htmk.erb partial to display by convention -->
 
