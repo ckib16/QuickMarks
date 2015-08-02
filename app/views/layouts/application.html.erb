@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blocmarks</title>
+  <title>QuickMarks</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -15,8 +15,8 @@
         <li> <%= link_to 'Topics', topics_path %> </li>
         <li> <%= link_to 'My Profile', user_path(current_user) %> </li>
       <% else %>
-      <% end %>   
-         
+      <% end %>
+
         <div class="pull-right user-info">
           <% if current_user %>
             Hello <%= current_user.email %>! <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
@@ -25,7 +25,6 @@
             <%= link_to "Sign Up", new_user_registration_path %>
           <% end %>
         </div>
-
 
     </ul>
 
