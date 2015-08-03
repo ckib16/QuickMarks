@@ -44,10 +44,14 @@
         <%= flash[:alert] %>
       </div>
     <% end %>
-
-    <%= yield %>
   </div>
 
-
 </body>
+
+<div class="container">
+  <%= yield %>
+</div>
+
+<%= render "welcome/footer" %>
+
 </html>
