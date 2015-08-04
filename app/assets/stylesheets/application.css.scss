@@ -1,5 +1,6 @@
-/** In application.css.scss
- *
+/* In application.css.scss
+*= require_self
+*= require_tree .
  */
 
 @import "bootstrap-sprockets";
