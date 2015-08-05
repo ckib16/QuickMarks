@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" style="height:100%;">
 <head>
   <title>QuickMarks</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <%= favicon_link_tag "favicon.ico" %>
 </head>
-<body>
+<body data-spy="scroll" data-target="nav">
   <div class="container">
     <ul class="nav nav-pills">
       <li> <%= link_to 'Home', root_path %></li>
@@ -47,14 +48,12 @@
     <% end %>
   </div>
 
+
+
   <div class="container">
     <%= yield %>
   </div>
 
 </body>
-
-
-
-<%= render "welcome/footer" %>
 
 </html>
