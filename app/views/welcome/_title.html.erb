@@ -1,0 +1,13 @@
+<section id="promo-3" class="content-block promo-3 min-height-500px bg-deepocean">
+  <div class="container text-center">
+    <h1>Quickmarks</h1>
+    <h2>Your Quick Social Bookmarking Site</h2>
+
+    <% if current_user %>
+    <% else %>
+      <%= link_to "Sign In", new_user_session_path, class: 'btn btn-outline btn-outline-xl outline-light' %>
+      <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-outline btn-outline-xl outline-light' %>
+    <% end %>
+  </div>
+  <!-- /.container -->
+</section>
