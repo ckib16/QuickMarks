@@ -1,6 +1,6 @@
 <h1>Bookmark</h1>
 
-<h2> <%= @bookmark.url %>  </h2>
+<h2> <%= link_to "#{@bookmark.url}", @bookmark.url %> </h2>
 
 <%= render partial: 'likes/like', locals: { bookmark: @bookmark } %>
 
