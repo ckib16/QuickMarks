@@ -79,4 +79,11 @@ Rails.application.configure do
 
   # 2015-03-15 - added for production push to Heroku
   config.action_mailer.default_url_options = { host: 'blocmarks-ckib16.herokuapp.com' }
+
+  # 2015-08-06 - added to try to fix production background image to show on Heroku
+  config.cache_classes = true
+  config.serve_static_files = true
+  config.assets.compile = true
+  config.assets.digest = true
+
 end
